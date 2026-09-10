@@ -1,0 +1,34 @@
+title: MyPowerHouse
+views:
+  - title: Home
+    path: home
+    icon: mdi:home-lightning-bolt
+    cards:
+      - type: markdown
+        title: MyPowerHouse
+        content: >-
+          {{ states('sensor.mypowerhouse_recommendation') }}
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: gauge
+            entity: sensor.mypowerhouse_battery_state_of_charge
+            name: Powerwall
+            min: 0
+            max: 100
+          - type: entity
+            entity: sensor.mypowerhouse_solar_generation
+            name: Solar now
+          - type: entity
+            entity: sensor.mypowerhouse_home_consumption
+            name: Home now
+          - type: entity
+            entity: sensor.mypowerhouse_grid_power
+            name: Grid now
+      - type: entities
+        title: Tariffs and battery
+        entities:
+          - sensor.mypowerhouse_import_rate
+          - sensor.mypowerhouse_export_rate
+          - sensor.mypowerhouse_battery_power

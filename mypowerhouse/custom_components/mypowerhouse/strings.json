@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up MyPowerHouse",
+        "description": "Choose the existing sensors that MyPowerHouse should analyse.",
+        "data": {
+          "solar_power_entity": "Solar generation power",
+          "home_power_entity": "Home consumption power",
+          "grid_power_entity": "Grid power",
+          "battery_power_entity": "Battery power",
+          "battery_soc_entity": "Battery state of charge",
+          "import_rate_entity": "Current import tariff",
+          "export_rate_entity": "Current export tariff (optional)",
+          "export_rate": "Fallback export tariff"
+        }
+      }
+    }
+  }
+}
